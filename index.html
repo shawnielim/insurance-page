@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Insurance Consultation | Shawn Lim</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1B4F8A;
+    --blue-dark: #153e6e;
+    --blue-light: #e8f0fb;
+    --blue-mid: #2e6ab8;
+    --text: #2c2c2c;
+    --muted: #6b7280;
+    --soft: #f7f9fc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --gold: #c49a4a;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .header-name {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue);
+    line-height: 1.2;
+  }
+
+  .header-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .header-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid rgba(27,79,138,0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #f7f9fc 0%, #eaf1fb 55%, #ddeaf9 100%);
+    padding: 52px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(27,79,138,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(27,79,138,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: rgba(27,79,138,0.1);
+    border: 1px solid rgba(27,79,138,0.2);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-headline {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 6vw, 38px);
+    font-weight: 700;
+    color: var(--blue-dark);
+    line-height: 1.25;
+    max-width: 520px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--blue-mid);
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 3.5vw, 17px);
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 auto 32px;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .hero-cta-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 18px rgba(27,79,138,0.35);
+    transition: all 0.22s ease;
+    margin-bottom: 14px;
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 14px;
+    text-align: center;
+  }
+
+  .hero-cta-btn:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(27,79,138,0.4);
+  }
+
+  .hero-cta-note {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── BENEFITS ── */
+  .benefits {
+    padding: 48px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 22px;
+    background: var(--soft);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .benefit-card:hover {
+    border-color: rgba(27,79,138,0.3);
+    box-shadow: 0 4px 16px rgba(27,79,138,0.08);
+    transform: translateY(-1px);
+  }
+
+  .benefit-emoji {
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .benefit-text h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .benefit-text p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ── TRUST / WHO I AM ── */
+  .trust {
+    background: var(--blue);
+    padding: 48px 24px;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .trust-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+
+  .trust-name {
+    font-family: 'Lora', serif;
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .trust-title {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+  }
+
+  .trust-bio {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+    margin: 0 auto 28px;
+    font-weight: 300;
+  }
+
+  .trust-bio strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .trust-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .trust-pill {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── STEPS ── */
+  .steps {
+    padding: 52px 24px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .steps-headline {
+    font-family: 'Lora', serif;
+    font-size: clamp(20px, 4.5vw, 26px);
+    font-weight: 700;
+    color: var(--blue-dark);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .steps-sub {
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .step-item::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 44px;
+    width: 1px;
+    height: calc(100% + 4px);
+    background: linear-gradient(to bottom, rgba(27,79,138,0.2), transparent);
+  }
+
+  .step-item:last-child::after { display: none; }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(27,79,138,0.3);
+  }
+
+  .step-content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    padding-top: 8px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── OBJECTION CRUSHER ── */
+  .objection {
+    background: var(--soft);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 44px 24px;
+    text-align: center;
+  }
+
+  .objection-inner {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .objection-q {
+    font-family: 'Lora', serif;
+    font-size: clamp(18px, 4vw, 23px);
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 18px;
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  .objection-a {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .objection-a strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── MAIN CTA ── */
+  .main-cta {
+    padding: 52px 24px;
+    text-align: center;
+    background: linear-gradient(160deg, #f7f9fc 0%, #eaf1fb 100%);
+  }
+
+  .main-cta-headline {
+    font-family: 'Lora', serif;
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .main-cta-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-weight: 300;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .main-cta-sub {
+    margin-bottom: 32px;
+  }
+
+  .cta-big-btn {
+    display: block;
+    background: var(--blue);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 18px 32px;
+    border-radius: 14px;
+    text-decoration: none;
+    max-width: 360px;
+    margin: 0 auto 16px;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(27,79,138,0.35);
+    transition: all 0.22s ease;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  .cta-big-btn:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(27,79,138,0.42);
+  }
+
+  .cta-fine {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--blue-dark);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  .footer-text strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+    transition: all 0.22s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .wa-float:hover {
+    background: #1fba59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  }
+
+  .wa-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim-1 { animation: fadeUp 0.6s ease 0.05s both; }
+  .anim-2 { animation: fadeUp 0.6s ease 0.15s both; }
+  .anim-3 { animation: fadeUp 0.6s ease 0.25s both; }
+  .anim-4 { animation: fadeUp 0.6s ease 0.35s both; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--blue);
+    border-radius: 2px;
+    margin: 0 auto 28px;
+    opacity: 0.25;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .hero { padding: 40px 20px 40px; }
+    .trust { padding: 40px 20px; }
+    .steps { padding: 40px 20px; }
+    .benefits { padding: 36px 20px; }
+    .main-cta { padding: 40px 20px; }
+    .wa-float span { display: none; }
+    .wa-float { padding: 13px; border-radius: 50%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-brand">
+    <div class="header-avatar">SR</div>
+    <div>
+      <div class="header-name">Shawn Lim</div>
+      <div class="header-sub">Prudential Licensed Agent</div>
+    </div>
+  </div>
+  <div class="header-badge">🔒 Free · No Obligation</div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="anim-1">
+    <div class="hero-eyebrow">Free 30-Min Consultation</div>
+  </div>
+  <div class="anim-2">
+    <h1 class="hero-headline">
+      You deserve to understand<br>
+      <em>exactly what you're paying for.</em>
+    </h1>
+  </div>
+  <div class="anim-3">
+    <p class="hero-sub">
+      Not a sales pitch. Not a product presentation.<br>
+      Just a real conversation — so you finally know where you stand.
+    </p>
+  </div>
+  <div class="anim-4">
+    <a class="hero-cta-btn" href="https://calendly.com/shawn-ruiming/free-insurance-consultation">
+      Book My Free Chat →
+    </a>
+    <p class="hero-cta-note">Takes 30 minutes. Completely free. No strings attached.</p>
+  </div>
+</section>
+
+<!-- ── BENEFITS ── -->
+<section class="benefits">
+  <p class="section-label">What you'll walk away with</p>
+
+  <div class="benefit-card">
+    <div class="benefit-emoji">🔍</div>
+    <div class="benefit-text">
+      <h3>Clarity on what your policy actually covers</h3>
+      <p>Most people have no idea what they're really paying for — until something happens. We'll go through it together so you know exactly where you stand.</p>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="benefit-emoji">💡</div>
+    <div class="benefit-text">
+      <h3>A second opinion you can trust</h3>
+      <p>Whether you have existing coverage or none at all, I'll give you an honest picture — including if there's nothing to change. No exaggeration, no fluff.</p>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="benefit-emoji">🤝</div>
+    <div class="benefit-text">
+      <h3>Zero pressure, zero obligation</h3>
+      <p>I'm not here to close a deal in 30 minutes. I'm here to make sure you leave the call knowing more than when you came in — that's it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST ── -->
+<section class="trust">
+  <p class="trust-label">Who you'll be speaking with</p>
+  <h2 class="trust-name">Shawn Lim</h2>
+  <p class="trust-title">Licensed Prudential Insurance Agent · Malaysia</p>
+
+  <p class="trust-bio">
+    I'm not a typical agent. I don't open with a pitch.<br><br>
+    I'm more like <strong>the friend who happens to know a lot about insurance</strong> — the one you'd actually want to call when you get one of those confusing premium letters in the mail.
+    <br><br>
+    My job is to help you understand your options clearly, so you can make a decision that's right for <em>your</em> life — not just tick a box on my targets.
+  </p>
+
+  <div class="trust-pills">
+    <span class="trust-pill">✓ Prudential Licensed</span>
+    <span class="trust-pill">✓ Malaysian-based</span>
+    <span class="trust-pill">✓ BNM guidelines compliant</span>
+    <span class="trust-pill">✓ No hard sell</span>
+  </div>
+</section>
+
+<!-- ── STEPS ── -->
+<section class="steps">
+  <h2 class="steps-headline">Here's what happens when you book</h2>
+  <p class="steps-sub">Simple, relaxed, and completely on your terms.</p>
+
+  <div class="step-item">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h3>Pick a time that works for you</h3>
+      <p>Use the booking link to choose any available slot. We'll meet over a quick call — no need to dress up or prepare anything fancy.</p>
+    </div>
+  </div>
+
+  <div class="step-item">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h3>We talk through your situation</h3>
+      <p>Tell me where you're at — existing coverage, concerns about repricing, or starting from scratch. I'll listen first, then share what I think honestly.</p>
+    </div>
+  </div>
+
+  <div class="step-item">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h3>You leave with clarity</h3>
+      <p>No homework, no pressure to decide anything on the spot. If there's something worth following up on, we'll go from there — only if you want to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── OBJECTION ── -->
+<section class="objection">
+  <div class="objection-inner">
+    <p class="objection-q">"Is this just going to be a sales pitch in disguise?"</p>
+    <p class="objection-a">Honestly? I get why you'd think that. Most insurance calls feel that way.</p>
+    <p class="objection-a">But here's the thing — <strong>I built my practice on referrals and trust, not on closing cold strangers in one call.</strong> If I push too hard, you'd never refer anyone to me. That's bad business, and it's also just not who I am.</p>
+    <p class="objection-a">Come with your questions. Come with your skepticism. I genuinely don't mind — that's actually the kind of conversation I do best in.</p>
+  </div>
+</section>
+
+<!-- ── MAIN CTA ── -->
+<section class="main-cta">
+  <h2 class="main-cta-headline">Ready for a conversation<br>that's actually useful?</h2>
+  <p class="main-cta-sub">Book your free 30-minute slot below. You choose the time, I'll bring the answers.</p>
+
+  <a class="cta-big-btn" href="https://calendly.com/shawn-ruiming/free-insurance-consultation">
+    📅 Book My Free Consultation
+  </a>
+  <p class="cta-fine">Free · 30 minutes · No obligation · Cancel anytime</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <p class="footer-text">
+    <strong>Shawn Lim</strong> · Prudential Licensed Agent, Malaysia<br>
+    This is an educational consultation — not a binding sales agreement.<br>
+    All recommendations follow BNM regulatory guidelines.
+  </p>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a class="wa-float" href="https://wa.me/60129221511" target="_blank" rel="noopener">
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+</body>
+</html>
